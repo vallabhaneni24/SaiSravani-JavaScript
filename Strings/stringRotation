@@ -1,0 +1,22 @@
+function isRotation(str1, str2) {
+  // Check if both strings have the same length
+  if (str1.length !== str2.length) {
+    return false;
+  }
+
+  // Concatenate the first string with itself
+  const concatenatedStr = str1 + str1;
+
+  // Check if the second string is a substring of the concatenated string
+  return concatenatedStr.includes(str2);
+}
+
+// Example usage
+const string1 = "JavaJ2eeStrutsHibernate";
+const string2 = "StrutsHibernateJavaJ2ee";
+
+if (isRotation(string1, string2)) {
+  console.log(`${string2} is a rotation of ${string1}.`);
+} else {
+  console.log(`${string2} is not a rotation of ${string1}.`);
+}
